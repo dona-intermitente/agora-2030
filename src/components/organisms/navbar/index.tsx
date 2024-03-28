@@ -7,13 +7,13 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem
 } from '@nextui-org/react'
 import Logo from '/public/assets/logos/logo-light.svg'
 import { menuItems } from './utils'
+import { Button } from '@/components/atoms/button'
 
 export const Navbar: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
@@ -46,7 +46,7 @@ export const Navbar: FC = () => {
       </NavbarContent>
       <NavbarContent justify='end'>
         <NavbarItem>
-          <Button color='primary' href='#' radius='full'>
+          <Button href='#' size='sm'>
             Donate
           </Button>
         </NavbarItem>
