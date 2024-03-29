@@ -2,6 +2,7 @@
 
 import { LinkButton } from '@/components/atoms/button'
 import { Hero } from '@/components/molecules/hero'
+import { Partners } from '@/components/molecules/partners'
 import { Programs } from '@/components/organisms/programs'
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
           the environment.
         </p>
         <Programs />
+        <Partners />
       </div>
     </>
   )
