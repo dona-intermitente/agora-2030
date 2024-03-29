@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Divider } from '../atoms/divider'
+import { Divider } from '../../atoms/divider'
 import Image from 'next/image'
 
 export const Hero: FC = () => {
@@ -12,7 +12,7 @@ export const Hero: FC = () => {
         objectFit='cover'
       />
       <aside
-        className={`container h-full items-center mx-auto px-10 grid grid-cols-1 md:grid-cols-2 text-white w-100`}>
+        className={`container h-full relative items-center mx-auto px-10 grid grid-cols-1 md:grid-cols-2 text-white w-100`}>
         <div>
           <h1 className='font-bold text-4xl'>
             We build inclusive prosperity through{' '}
