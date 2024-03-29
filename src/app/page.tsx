@@ -1,6 +1,7 @@
 'use client'
 
 import { LinkButton } from '@/components/atoms/button'
+import { Funders } from '@/components/molecules/funders'
 import { Hero } from '@/components/molecules/hero'
 import { Partners } from '@/components/molecules/partners'
 import { Programs } from '@/components/organisms/programs'
@@ -21,6 +22,7 @@ export default function Home() {
         </p>
         <Programs />
         <Partners />
+        <Funders />
       </div>
     </>
   )

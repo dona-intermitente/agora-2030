@@ -1,4 +1,4 @@
-export const partnersItems = [
+export const partnerItems = [
   {
     alt: 'mercado libre',
     img: '/assets/images/partners/mercado-libre.jpg'
