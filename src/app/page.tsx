@@ -5,6 +5,7 @@ import { Funders } from '@/components/molecules/funders'
 import { Hero } from '@/components/molecules/hero'
 import { Impact } from '@/components/molecules/impact'
 import { Partners } from '@/components/molecules/partners'
+import { Form } from '@/components/organisms/form'
 import { Programs } from '@/components/organisms/programs'
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <Funders />
       </div>
       <Impact />
+      <Form />
     </>
   )
 }
