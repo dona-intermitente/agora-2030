@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={manrope.className}>
         <Providers>
-          <main>
+          <main className='text-foreground bg-background'>
             <Navbar />
             {children}
             <Footer />

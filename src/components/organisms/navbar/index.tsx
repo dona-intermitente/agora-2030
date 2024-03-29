@@ -19,10 +19,7 @@ export const Navbar: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   return (
-    <NavbarUi
-      className=' bg-white'
-      isBlurred={false}
-      onMenuOpenChange={setIsMenuOpen}>
+    <NavbarUi isBlurred={false} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
