@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className='container mx-auto'>
+      <div className='container'>
         <LinkButton href='/'>Find Out More About Our Open Programs</LinkButton>
         <h1>What Do We Do?</h1>
         <p>

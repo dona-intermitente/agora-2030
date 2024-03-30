@@ -3,7 +3,7 @@ import { Card, CardBody, Image } from '@nextui-org/react'
 
 export default function Blog() {
   return (
-    <div className='container mx-auto px-5'>
+    <div className='container'>
       <div className='grid grid-cols-5 gap-10'>
         <Card className='col-span-3 dark bg-secondary'>
           <CardBody className='p-20'>
@@ -11,7 +11,7 @@ export default function Blog() {
             <h1>Learn About Our Latest Articles and News</h1>
           </CardBody>
         </Card>
-        <div className='col-span-2 relative'>
+        <div className='relative col-span-2'>
           <Image
             src='/assets/images/blog/header-blog.png'
             alt='blog'

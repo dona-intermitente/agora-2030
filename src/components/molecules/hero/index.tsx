@@ -13,17 +13,17 @@ export const Hero: FC = () => {
         priority
       />
       <aside
-        className={`container h-full relative items-center mx-auto px-10 grid grid-cols-1 md:grid-cols-2 text-white w-100`}>
+        className={`container h-full relative items-center px-10 grid grid-cols-1 md:grid-cols-2 text-white w-100`}>
         <div>
-          <h1 className='font-bold text-4xl'>
+          <h1 className='text-4xl font-bold'>
             We build inclusive prosperity through{' '}
             <span className='font-extrabold'>sustainable entrepreneurs</span>
           </h1>
           <Divider />
-          <p className='font-semibold text-lg'>
+          <h4>
             We strive for a world in which social and environmental
             sustainability becomes the true business engine.
-          </p>
+          </h4>
         </div>
       </aside>
     </section>

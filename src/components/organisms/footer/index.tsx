@@ -15,15 +15,15 @@ import YouTube from '/public/assets/icons/youtube.svg'
 export const Footer: FC = () => {
   return (
     <section className='w-full'>
-      <div className='container flex justify-between mx-auto my-10 px-4'>
-        <div className='gap-11 flex flex-col justify-between'>
+      <div className='container flex justify-between px-4 my-10'>
+        <div className='flex flex-col justify-between gap-11'>
           <Logo />
           <div>
             <small className='block font-bold'>Agora Partnerships®</small>
             <small>All Rights Reserved.Reg. U.S. Pat. and TM Off</small>
           </div>
         </div>
-        <div className='gap-2 flex flex-col'>
+        <div className='flex flex-col gap-2'>
           {menuItems.map((item, idx) => (
             <Link
               color='foreground'
@@ -39,8 +39,8 @@ export const Footer: FC = () => {
           </Button>
           <LinkButton href='#'>Subscribe to Our Newsletter</LinkButton>
         </div>
-        <div className='gap-11 flex flex-col justify-between'>
-          <div className='gap-6 grid grid-cols-3'>
+        <div className='flex flex-col justify-between gap-11'>
+          <div className='grid grid-cols-3 gap-6'>
             <Link href='/'>
               <Facebook width='25' />
             </Link>

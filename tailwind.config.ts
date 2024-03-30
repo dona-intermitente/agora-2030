@@ -59,9 +59,25 @@ const config: Config = {
           '900': '#170A0A',
           '950': '#0F0404'
         }
+      },
+      container: {
+        center: true
+      },
+      data: {
+        hover: 'hover="true"'
       }
     }
   },
-  plugins: [nextui()]
+  plugins: [
+    nextui({
+      themes: {
+        light: {
+          layout: {
+            hoverOpacity: 1
+          }
+        }
+      }
+    })
+  ]
 }
 export default config
