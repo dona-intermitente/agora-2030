@@ -11,7 +11,7 @@ export const LinkButton: FC<LinkProps> = ({
     <Link
       {...props}
       color={color}
-      anchorIcon={<ArrowUp class='ms-2' />}
+      anchorIcon={<ArrowUp className='ms-2' />}
       className='font-bold'
       showAnchorIcon>
       {children}
