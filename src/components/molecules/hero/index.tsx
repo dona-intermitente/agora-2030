@@ -7,9 +7,10 @@ export const Hero: FC = () => {
     <section className='h-[70vh] relative'>
       <Image
         alt='background'
+        className='object-cover'
         src='/assets/images/background.jpg'
-        layout='fill'
-        objectFit='cover'
+        fill
+        priority
       />
       <aside
         className={`container h-full relative items-center mx-auto px-10 grid grid-cols-1 md:grid-cols-2 text-white w-100`}>
