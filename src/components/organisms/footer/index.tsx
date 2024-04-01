@@ -15,8 +15,8 @@ import YouTube from '/public/assets/icons/youtube.svg'
 export const Footer: FC = () => {
   return (
     <section className='w-full'>
-      <div className='container max-w-screen-xl flex justify-between px-6 my-10'>
-        <div className='flex flex-col justify-between gap-11'>
+      <div className='content flex flex-col md:flex-row gap-8 justify-between my-10'>
+        <div className='flex flex-col gap-10 justify-between'>
           <Logo />
           <div>
             <small className='block font-bold'>Agora Partnerships®</small>
@@ -39,24 +39,24 @@ export const Footer: FC = () => {
           </Button>
           <LinkButton href='#'>Subscribe to Our Newsletter</LinkButton>
         </div>
-        <div className='flex flex-col justify-between gap-11'>
-          <div className='grid grid-cols-3 gap-6'>
-            <Link href='/'>
+        <div className='flex flex-col gap-10 justify-between'>
+          <div className='flex flex-none gap-6 md:grid md:grid-cols-3 items-center'>
+            <Link href='https://www.facebook.com/AgoraPartnerships'>
               <Facebook width='25' />
             </Link>
-            <Link href='/'>
+            <Link href='https://www.instagram.com/agora_2030'>
               <Instagram width='25' />
             </Link>
-            <Link href='/'>
+            <Link href='https://twitter.com/Agora2030'>
               <Twitter width='25' />
             </Link>
-            <Link href='/'>
+            <Link href='https://open.spotify.com/show/2ejv4LsiSWT9GsFnnHsHZc?si=8f23d80250c54fb6&nd=1'>
               <Spotify width='25' />
             </Link>
-            <Link href='/'>
+            <Link href='https://www.linkedin.com/company/agora-partnerships'>
               <LinkedIn width='25' />
             </Link>
-            <Link href='/'>
+            <Link href='https://www.youtube.com/channel/UCHourQ5NcP4S-jsA2fvBmEA'>
               <YouTube width='25' />
             </Link>
           </div>
