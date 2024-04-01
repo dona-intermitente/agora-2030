@@ -15,7 +15,7 @@ import YouTube from '/public/assets/icons/youtube.svg'
 export const Footer: FC = () => {
   return (
     <section className='w-full'>
-      <div className='container flex justify-between px-4 my-10'>
+      <div className='container max-w-screen-xl flex justify-between px-6 my-10'>
         <div className='flex flex-col justify-between gap-11'>
           <Logo />
           <div>

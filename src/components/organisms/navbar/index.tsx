@@ -11,28 +11,33 @@ import {
   NavbarMenu,
   NavbarMenuItem
 } from '@nextui-org/react'
-import Logo from '/public/assets/logos/logo-light.svg'
 import { menuItems } from './utils'
 import { Button } from '@/components/atoms/button'
+import Image from 'next/image'
 
 export const Navbar: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   return (
-    <NavbarUi isBlurred={false} onMenuOpenChange={setIsMenuOpen}>
+    <NavbarUi
+      className='shadow-lg'
+      height='78px'
+      isBlurred={false}
+      maxWidth='xl'
+      onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className='sm:hidden'
-        />
         <NavbarBrand>
           <Link href='/'>
-            <Logo />
+            <Image
+              alt='logo`'
+              src='/assets/logos/logo-light.svg'
+              width={150}
+              height={50}
+            />
           </Link>
         </NavbarBrand>
       </NavbarContent>
-
-      <NavbarContent className='hidden sm:flex gap-4' justify='end'>
+      <NavbarContent className='hidden sm:flex' justify='end'>
         {menuItems.map((item, idx) => (
           <NavbarItem key={`${item.label}-${idx}`}>
             <Link color='foreground' href={item.href}>
@@ -47,8 +52,11 @@ export const Navbar: FC = () => {
             Donate
           </Button>
         </NavbarItem>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          className='sm:hidden'
+        />
       </NavbarContent>
-
       <NavbarMenu>
         {menuItems.map((item, idx) => (
           <NavbarMenuItem key={`${item.label}-${idx}`}>
