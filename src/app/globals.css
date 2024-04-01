@@ -44,7 +44,7 @@ body {
 
 @layer components {
   .content {
-    @apply container flex flex-col gap-16 max-w-screen-xl px-6 my-20;
+    @apply container max-w-screen-xl !px-6;
   }
   .gradient-primary {
     @apply bg-gradient-to-tr from-primary to-primary-700;

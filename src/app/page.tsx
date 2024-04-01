@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className='content'>
+      <div className='content gap-16 flex flex-col my-20'>
         <section className='flex flex-col gap-10'>
           <div className='gap-6 grid md:grid-cols-2'>
             <div className='text-end md:order-1'>

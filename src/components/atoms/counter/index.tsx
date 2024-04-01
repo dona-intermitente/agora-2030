@@ -9,8 +9,8 @@ type CounterProps = {
 
 export const Counter: FC<CounterProps> = ({ description, value }) => {
   return (
-    <CardUi className='h-full'>
-      <CardBody className='text-center text-secondary px-8 py-10'>
+    <CardUi className='h-full transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300'>
+      <CardBody className='text-center text-secondary px-6 py-10'>
         <CountUp
           end={value}
           duration={5}
@@ -19,7 +19,7 @@ export const Counter: FC<CounterProps> = ({ description, value }) => {
           enableScrollSpy
           className='text-4xl font-bold mb-3'
         />
-        <p>{description}</p>
+        <p className='font-semibold text-balance'>{description}</p>
       </CardBody>
     </CardUi>
   )
