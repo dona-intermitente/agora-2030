@@ -20,10 +20,10 @@ body {
 
 @layer base {
   h1 {
-    @apply text-3xl font-semibold;
+    @apply text-3xl font-bold mb-4;
   }
   h2 {
-    @apply text-2xl;
+    @apply text-2xl font-semibold mb-4;
   }
   h3 {
     @apply text-xl;
@@ -36,6 +36,12 @@ body {
   }
   h6 {
     @apply text-sm;
+  }
+}
+
+@layer components {
+  .content {
+    @apply container flex flex-col gap-16 max-w-screen-xl px-6 my-20;
   }
 }
 
