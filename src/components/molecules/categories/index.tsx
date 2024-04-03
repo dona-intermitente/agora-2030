@@ -1,15 +1,13 @@
 'use client'
 
 import React, { FC } from 'react'
-import { Tab, Tabs } from '@nextui-org/react'
 import { categorieItems } from './utils'
+import { Tabs } from '@/components/atoms/tabs'
 
-export const Categories: FC = () => {
-  return (
-    <div className='flex w-full flex-col'>
-      <Tabs items={categorieItems}>
-        {(item) => <Tab key={item.key} title={item.title} />}
-      </Tabs>
-    </div>
-  )
+type CategoriesProps = {
+  setFilter: any
+}
+
+export const Categories: FC<CategoriesProps> = ({ setFilter }) => {
+  return <Tabs items={categorieItems} setSelected={setFilter} />
 }

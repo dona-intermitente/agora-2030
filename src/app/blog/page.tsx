@@ -3,15 +3,15 @@ import { Card, CardBody, Image } from '@nextui-org/react'
 
 export default function Blog() {
   return (
-    <div className='container'>
-      <div className='grid grid-cols-5 gap-10'>
-        <Card className='col-span-3 dark bg-secondary'>
-          <CardBody className='p-20'>
+    <div className='content gap-16 flex flex-col my-10'>
+      <header className='flex flex-col md:flex-row gap-10'>
+        <Card className='dark bg-secondary min-h-80 md:min-h-0'>
+          <CardBody className='justify-center p-10 lg:p-20'>
             <small>OUR BLOG</small>
             <h1>Learn About Our Latest Articles and News</h1>
           </CardBody>
         </Card>
-        <div className='relative col-span-2'>
+        <div className='relative'>
           <Image
             src='/assets/images/blog/header-blog.png'
             alt='blog'
@@ -20,7 +20,7 @@ export default function Blog() {
             height='100%'
           />
         </div>
-      </div>
+      </header>
       <Posts />
     </div>
   )
