@@ -46,6 +46,9 @@ body {
   .content {
     @apply container max-w-screen-xl !px-6;
   }
+  .content-small {
+    @apply container max-w-screen-lg !px-6;
+  }
   .gradient-primary {
     @apply bg-gradient-to-tr from-primary to-primary-700;
   }

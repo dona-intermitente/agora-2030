@@ -132,17 +132,19 @@ const get = async ({ category, limit }: GetPostType) => {
   //   key: key ?? ''
   // }
 
-  if (limit) {
-    return await mock.slice(0, limit)
-  }
+  let postMock = [...mock]
 
   if (category) {
     // params.category = category
-    return await mock.filter((post) => post.category === category)
+    postMock = postMock.filter((post) => post.category === category)
+  }
+  if (limit) {
+    postMock = postMock.slice(0, limit)
   }
 
   // const url = `${baseUrl}.json?` + new URLSearchParams(params)
-  return await mock
+  // return await mock
+  return postMock
 
   // const response = await fetch(url)
   // const data = await response.json()
@@ -154,15 +156,16 @@ const get = async ({ category, limit }: GetPostType) => {
   // }
 }
 
-const getById = async (id: number) => {
-  const response = await fetch(`${baseUrl}/${id}.json?key=${key}`)
-  return await response.json()
+export const getById = async (id: number) => {
+  // const response = await fetch(`${baseUrl}/${id}.json?key=${key}`)
+  // return await response.json()
+  return await mock[0]
 }
 
 export const post = {
   useGetById: (id: number) => {
     const {
-      data: posts,
+      data: post,
       isLoading,
       isError,
       error,
@@ -172,7 +175,7 @@ export const post = {
       queryFn: () => getById(id),
       initialData: undefined
     })
-    return { posts, isLoading, isError, error, isFetching }
+    return { post, isLoading, isError, error, isFetching }
   },
   useGet: ({ category, limit }: GetPostType) => {
     const {

@@ -5,14 +5,11 @@ import { Funders } from '@/components/molecules/funders'
 import { Hero } from '@/components/molecules/hero'
 import { Impact } from '@/components/molecules/impact'
 import { Partners } from '@/components/molecules/partners'
-import { PostList } from '@/components/molecules/post-list'
 import { Form } from '@/components/organisms/form'
+import { PostsRecomended } from '@/components/organisms/post-recommended'
 import { Programs } from '@/components/organisms/programs'
-import { api } from '@/service'
 
 export default function Home() {
-  const { posts, isFetching } = api.post.useGet({ limit: 3 })
-
   return (
     <>
       <Hero />
@@ -68,7 +65,7 @@ export default function Home() {
           <header>
             <h2 className='text-secondary'>Open Calls & News</h2>
           </header>
-          <PostList loading={isFetching} posts={posts} />
+          <PostsRecomended />
         </section>
       </div>
       <Form />

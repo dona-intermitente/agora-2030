@@ -23,7 +23,7 @@ export const PostList: FC<PostListProps> = ({ loading, posts }) => {
           <Card
             description={post.description}
             header={categoriesFormat[post.category]}
-            href={`/blog/post?id=${post.id}`}
+            href={`/blog/post/${post.id}`}
             img={post.image}
             key={post.id}
             title={post.title}
