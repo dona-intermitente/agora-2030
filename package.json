@@ -24,7 +24,9 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@nextui-org/react": "2.2.10",
@@ -40,26 +42,36 @@
     "tailwind-merge": "2.2.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-typescript": "^7.24.1",
     "@commitlint/cli": "19.2.1",
     "@commitlint/config-conventional": "19.1.0",
+    "@jest/globals": "^29.7.0",
     "@playwright/test": "1.42.1",
     "@svgr/webpack": "8.1.0",
     "@tanstack/eslint-plugin-query": "5.28.6",
+    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/react": "14.2.2",
     "@types/node": "20",
     "@types/react": "18",
     "@types/react-dom": "18",
     "@types/react-slick": "0.23.13",
     "autoprefixer": "10.0.1",
+    "babel-jest": "^29.7.0",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8",
     "eslint-config-next": "14.1.4",
     "eslint-config-prettier": "9.1.0",
     "husky": "9.0.11",
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
     "lint-staged": "15.2.2",
     "postcss": "8",
     "prettier": "3.2.5",
     "tailwindcss": "3.4.3",
+    "ts-node": "10.9.2",
     "typescript": "5"
   }
 }
