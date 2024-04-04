@@ -1,4 +1,4 @@
-import { Posts } from '@/components/organisms/post'
+import { PostsPanel } from '@/components/organisms/post-panel'
 import { Card, CardBody, Image } from '@nextui-org/react'
 
 export default function Blog() {
@@ -21,7 +21,7 @@ export default function Blog() {
           />
         </div>
       </header>
-      <Posts />
+      <PostsPanel />
     </div>
   )
 }

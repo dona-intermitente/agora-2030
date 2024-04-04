@@ -1,4 +1,4 @@
-import { PostDataType } from '@/types/post'
+import { GetPostType, PostDataType } from '@/types/post'
 import { useQuery } from '@tanstack/react-query'
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
@@ -127,10 +127,14 @@ const mock: PostDataType[] = [
   }
 ]
 
-const get = async (category?: string) => {
+const get = async ({ category, limit }: GetPostType) => {
   // const params: Record<string, string> = {
   //   key: key ?? ''
   // }
+
+  if (limit) {
+    return await mock.slice(0, limit)
+  }
 
   if (category) {
     // params.category = category
@@ -170,7 +174,7 @@ export const post = {
     })
     return { posts, isLoading, isError, error, isFetching }
   },
-  useGet: (category?: string) => {
+  useGet: ({ category, limit }: GetPostType) => {
     const {
       data: posts,
       isLoading,
@@ -178,8 +182,8 @@ export const post = {
       error,
       isFetching
     } = useQuery<PostDataType[]>({
-      queryKey: ['posts', category],
-      queryFn: () => get(category),
+      queryKey: ['posts', category, limit],
+      queryFn: () => get({ category, limit }),
       initialData: []
     })
     return { posts, isLoading, isError, error, isFetching }

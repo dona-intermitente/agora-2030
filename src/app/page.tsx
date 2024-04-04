@@ -5,10 +5,14 @@ import { Funders } from '@/components/molecules/funders'
 import { Hero } from '@/components/molecules/hero'
 import { Impact } from '@/components/molecules/impact'
 import { Partners } from '@/components/molecules/partners'
+import { PostList } from '@/components/molecules/post-list'
 import { Form } from '@/components/organisms/form'
 import { Programs } from '@/components/organisms/programs'
+import { api } from '@/service'
 
 export default function Home() {
+  const { posts, isFetching } = api.post.useGet({ limit: 3 })
+
   return (
     <>
       <Hero />
@@ -59,6 +63,14 @@ export default function Home() {
         </section>
       </div>
       <Impact />
+      <div className='content gap-16 flex flex-col my-20'>
+        <section className='flex flex-col gap-10'>
+          <header>
+            <h2 className='text-secondary'>Open Calls & News</h2>
+          </header>
+          <PostList loading={isFetching} posts={posts} />
+        </section>
+      </div>
       <Form />
     </>
   )
