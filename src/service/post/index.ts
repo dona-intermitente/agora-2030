@@ -25,7 +25,7 @@ const get = async ({ category, limit }: GetPostType) => {
 
 export const getById = async (id: number) => {
   const response = await fetch(`${baseUrl}/${id}.json?key=${key}`)
-  return await response.json()
+  return (await response.json()) as PostDataType
 }
 
 export const post = {

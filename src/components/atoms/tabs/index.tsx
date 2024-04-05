@@ -1,11 +1,11 @@
 'use client'
 
-import React, { FC } from 'react'
+import React, { Dispatch, FC, SetStateAction } from 'react'
 import { Tab, Tabs as TabsUi } from '@nextui-org/react'
 import { categoriesEnum } from '@/commons/enums'
 
 interface TabItemProps {
-  setSelected: any
+  setSelected: Dispatch<SetStateAction<any>>
   items: {
     key: string
     title: string
@@ -14,18 +14,16 @@ interface TabItemProps {
 
 export const Tabs: FC<TabItemProps> = ({ items, setSelected }) => {
   return (
-    <>
-      <TabsUi
-        items={items}
-        onSelectionChange={(key) =>
-          setSelected(key as keyof typeof categoriesEnum)
-        }
-        classNames={{
-          base: 'block sm:inline-flex',
-          tabList: 'flex-col sm:flex-row'
-        }}>
-        {({ key, title }) => <Tab key={key} title={title} />}
-      </TabsUi>
-    </>
+    <TabsUi
+      items={items}
+      onSelectionChange={(key) =>
+        setSelected(key as keyof typeof categoriesEnum)
+      }
+      classNames={{
+        base: 'block sm:inline-flex',
+        tabList: 'flex-col sm:flex-row'
+      }}>
+      {({ key, title }) => <Tab key={key} title={title} />}
+    </TabsUi>
   )
 }

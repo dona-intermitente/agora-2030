@@ -7,7 +7,9 @@ import { api } from '@/service'
 import { useState } from 'react'
 
 export const PostsPanel = () => {
-  const [filter, setFilter] = useState<keyof typeof categoriesEnum>()
+  const [filter, setFilter] = useState<keyof typeof categoriesEnum>(
+    categoriesEnum.ALL
+  )
   const { posts, isFetching } = api.post.useGet({
     category: filter === categoriesEnum.ALL ? undefined : filter
   })
