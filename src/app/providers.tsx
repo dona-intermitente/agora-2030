@@ -2,7 +2,11 @@
 
 import { NextUIProvider } from '@nextui-org/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import Accessibilik from 'accessibility-react-widget'
+import dynamic from 'next/dynamic'
+
+const Accessibilik = dynamic(() => import('accessibility-react-widget'), {
+  ssr: false
+})
 
 export function Providers({
   children
