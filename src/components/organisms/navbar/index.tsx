@@ -1,12 +1,11 @@
 'use client'
 
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import {
   Navbar as NavbarUi,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem
@@ -14,9 +13,12 @@ import {
 import { menuItems } from './utils'
 import { Button } from '@/components/atoms/button'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 export const Navbar: FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const pathname = usePathname()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <NavbarUi
@@ -39,7 +41,9 @@ export const Navbar: FC = () => {
       </NavbarContent>
       <NavbarContent className='hidden sm:flex' justify='end'>
         {menuItems.map((item, idx) => (
-          <NavbarItem key={`${item.label}-${idx}`}>
+          <NavbarItem
+            key={`${item.label}-${idx}`}
+            isActive={pathname.includes(item.href)}>
             <Link color='foreground' href={item.href}>
               {item.label}
             </Link>
