@@ -32,21 +32,21 @@ export const Form: FC = () => {
                 name='first_name'
                 control={control}
                 render={({ field }) => (
-                  <Input label='First Name' type='text' {...field} />
+                  <Input label='First Name' type='text' {...field} ref={null} />
                 )}
               />
               <Controller
                 name='last_name'
                 control={control}
                 render={({ field }) => (
-                  <Input label='Last Name' type='text' {...field} />
+                  <Input label='Last Name' type='text' {...field} ref={null} />
                 )}
               />
               <Controller
                 name='email'
                 control={control}
                 render={({ field }) => (
-                  <Input label='Email' type='email' {...field} />
+                  <Input label='Email' type='email' {...field} ref={null} />
                 )}
               />
             </div>
@@ -55,14 +55,19 @@ export const Form: FC = () => {
                 name='business_trade'
                 control={control}
                 render={({ field }) => (
-                  <Input label='Business/Trade' type='text' {...field} />
+                  <Input
+                    label='Business/Trade'
+                    type='text'
+                    {...field}
+                    ref={null}
+                  />
                 )}
               />
               <Controller
                 name='company'
                 control={control}
                 render={({ field }) => (
-                  <Input label='Company' type='text' {...field} />
+                  <Input label='Company' type='text' {...field} ref={null} />
                 )}
               />
               <Controller

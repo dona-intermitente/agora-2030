@@ -6,6 +6,8 @@ const createJestConfig = nextJest({
 })
 
 const config: Config = {
+  automock: false,
+  resetMocks: false,
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
   transformIgnorePatterns: ['/node_modules/'],
