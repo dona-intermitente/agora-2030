@@ -7,9 +7,10 @@ const key = process.env.NEXT_PUBLIC_MOCKAROO_KEY
 const get = async ({ category, limit }: GetPostType) => {
   const params: Record<string, string> = {
     key: key ?? '',
-    limit: limit ?? '',
     category: category ?? ''
   }
+
+  if (limit) params.limit = limit.toString()
 
   const url = `${baseUrl}.json?` + new URLSearchParams(params)
 
