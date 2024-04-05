@@ -3,7 +3,7 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
 import { menuItems } from '../navbar/utils'
-import { Button, LinkButton } from '@/components/atoms/button'
+import { Button, LinkButton, ExternalButton } from '@/components/atoms/button'
 import Logo from '@public/assets/logos/logo.svg'
 import Facebook from '@public/assets/icons/facebook.svg'
 import Spotify from '@public/assets/icons/spotify.svg'
@@ -25,10 +25,7 @@ export const Footer: FC = () => {
         </div>
         <div className='flex flex-col gap-2'>
           {menuItems.map((item, idx) => (
-            <Link
-              color='foreground'
-              key={`${item.label}-${idx}`}
-              href={item.href}>
+            <Link key={`${item.label}-${idx}`} href={item.href}>
               {item.label}
             </Link>
           ))}
@@ -41,24 +38,34 @@ export const Footer: FC = () => {
         </div>
         <div className='flex flex-col gap-10 justify-between'>
           <div className='flex flex-none gap-6 md:grid md:grid-cols-3 items-center'>
-            <Link href='https://www.facebook.com/AgoraPartnerships'>
+            <ExternalButton
+              href='https://www.facebook.com/AgoraPartnerships'
+              isExternal>
               <Facebook width='25' />
-            </Link>
-            <Link href='https://www.instagram.com/agora_2030'>
+            </ExternalButton>
+            <ExternalButton
+              href='https://www.instagram.com/agora_2030'
+              isExternal>
               <Instagram width='25' />
-            </Link>
-            <Link href='https://twitter.com/Agora2030'>
+            </ExternalButton>
+            <ExternalButton href='https://twitter.com/Agora2030' isExternal>
               <Twitter width='25' />
-            </Link>
-            <Link href='https://open.spotify.com/show/2ejv4LsiSWT9GsFnnHsHZc?si=8f23d80250c54fb6&nd=1'>
+            </ExternalButton>
+            <ExternalButton
+              href='https://open.spotify.com/show/2ejv4LsiSWT9GsFnnHsHZc?si=8f23d80250c54fb6&nd=1'
+              isExternal>
               <Spotify width='25' />
-            </Link>
-            <Link href='https://www.linkedin.com/company/agora-partnerships'>
+            </ExternalButton>
+            <ExternalButton
+              href='https://www.linkedin.com/company/agora-partnerships'
+              isExternal>
               <LinkedIn width='25' />
-            </Link>
-            <Link href='https://www.youtube.com/channel/UCHourQ5NcP4S-jsA2fvBmEA'>
+            </ExternalButton>
+            <ExternalButton
+              href='https://www.youtube.com/channel/UCHourQ5NcP4S-jsA2fvBmEA'
+              isExternal>
               <YouTube width='25' />
-            </Link>
+            </ExternalButton>
           </div>
           <small>info@agora2030.org</small>
         </div>

@@ -44,9 +44,7 @@ export const Navbar: FC = () => {
           <NavbarItem
             key={`${item.label}-${idx}`}
             isActive={pathname?.includes(item.href)}>
-            <Link color='foreground' href={item.href}>
-              {item.label}
-            </Link>
+            <Link href={item.href}>{item.label}</Link>
           </NavbarItem>
         ))}
       </NavbarContent>
@@ -64,7 +62,7 @@ export const Navbar: FC = () => {
       <NavbarMenu>
         {menuItems.map((item, idx) => (
           <NavbarMenuItem key={`${item.label}-${idx}`}>
-            <Link className='w-full' color='foreground' href={item.href}>
+            <Link className='w-full' href={item.href}>
               {item.label}
             </Link>
           </NavbarMenuItem>
