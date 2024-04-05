@@ -10,9 +10,11 @@ export const LinkButton: FC<LinkProps> = ({
   return (
     <Link
       {...props}
+      anchorIcon={
+        <ArrowUp className='ms-2 transition ease-in-out group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:scale-110 duration-300' />
+      }
+      className='font-bold group'
       color={color}
-      anchorIcon={<ArrowUp className='ms-2' />}
-      className='font-bold'
       showAnchorIcon>
       {children}
     </Link>
