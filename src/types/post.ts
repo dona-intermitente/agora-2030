@@ -13,5 +13,5 @@ export type PostDataType = {
 
 export type GetPostType = {
   category?: keyof typeof categoriesEnum
-  limit?: number
+  limit?: string
 }

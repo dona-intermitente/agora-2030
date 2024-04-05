@@ -10,7 +10,7 @@ type PostsRecomendedProps = {
 }
 
 export const PostsRecomended: FC<PostsRecomendedProps> = ({ category }) => {
-  const { posts, isFetching } = api.post.useGet({ category, limit: 3 })
+  const { posts, isFetching } = api.post.useGet({ category, limit: '3' })
 
   return <PostList loading={isFetching} posts={posts} />
 }
