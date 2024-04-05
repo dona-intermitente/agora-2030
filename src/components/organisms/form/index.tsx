@@ -4,19 +4,38 @@ import { Button } from '@/components/atoms/button'
 import { Input } from '@/components/atoms/input'
 import { CountryList } from '@/components/molecules/country-list'
 import { Card, CardBody } from '@nextui-org/react'
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { INITIAL_STATE } from './utils'
 import { sendEmail } from '@/utils/send-email'
 import { useForm, Controller } from 'react-hook-form'
 import { FormDataType } from '@/types/form'
+import { useApp } from '@/hooks/use-app'
 
 export const Form: FC = () => {
-  const { control, handleSubmit } = useForm<FormDataType>({
+  const { toast } = useApp()
+  const [loaidng, setLoading] = useState(false)
+  const {
+    control,
+    handleSubmit,
+    reset,
+    setValue,
+    formState: { isValid }
+  } = useForm<FormDataType>({
     defaultValues: INITIAL_STATE
   })
 
   const onSubmit = (data: FormDataType) => {
+    setLoading(true)
     sendEmail(data)
+      .then(() => {
+        toast?.success('successful subscription')
+        setValue('country', '')
+        reset()
+      })
+      .catch(() => {
+        toast?.error('Subscription error. try again')
+      })
+      .finally(() => setLoading(false))
   }
 
   return (
@@ -31,6 +50,7 @@ export const Form: FC = () => {
               <Controller
                 name='first_name'
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <Input label='First Name' type='text' {...field} ref={null} />
                 )}
@@ -38,6 +58,7 @@ export const Form: FC = () => {
               <Controller
                 name='last_name'
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <Input label='Last Name' type='text' {...field} ref={null} />
                 )}
@@ -45,6 +66,7 @@ export const Form: FC = () => {
               <Controller
                 name='email'
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <Input label='Email' type='email' {...field} ref={null} />
                 )}
@@ -54,6 +76,7 @@ export const Form: FC = () => {
               <Controller
                 name='business_trade'
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <Input
                     label='Business/Trade'
@@ -66,6 +89,7 @@ export const Form: FC = () => {
               <Controller
                 name='company'
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <Input label='Company' type='text' {...field} ref={null} />
                 )}
@@ -73,8 +97,10 @@ export const Form: FC = () => {
               <Controller
                 name='country'
                 control={control}
+                rules={{ required: true }}
                 render={({ field }) => (
                   <CountryList
+                    value={field.value}
                     onChange={(country) => {
                       field.onChange(country)
                     }}
@@ -84,7 +110,9 @@ export const Form: FC = () => {
             </div>
           </div>
           <div>
-            <Button type='submit'>Submit</Button>
+            <Button type='submit' isDisabled={!isValid} isLoading={loaidng}>
+              Submit
+            </Button>
           </div>
         </form>
       </CardBody>

@@ -7,7 +7,7 @@ export const Input: FC<InputProps> = ({ children, ...props }) => {
       {...props}
       variant='underlined'
       aria-labelledby={props.name}
-      required={false}
+      required
     />
   )
 }

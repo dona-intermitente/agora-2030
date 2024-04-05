@@ -6,10 +6,11 @@ import Image from 'next/image'
 import React, { FC, Key } from 'react'
 
 interface CountieListProps {
+  value: string
   onChange: (country: string) => void
 }
 
-export const CountryList: FC<CountieListProps> = ({ onChange }) => {
+export const CountryList: FC<CountieListProps> = ({ value, onChange }) => {
   const countries = Object.entries(country.all).map(([key, value]) => {
     return { label: (value as CountryListDataType).name, value: key }
   })
@@ -30,6 +31,7 @@ export const CountryList: FC<CountieListProps> = ({ onChange }) => {
 
   return (
     <Autocomplete
+      inputValue={value}
       aria-labelledby='country'
       iconItem={iconItem}
       name='country'
