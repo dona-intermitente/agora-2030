@@ -2,6 +2,7 @@
 
 import { NextUIProvider } from '@nextui-org/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Accessibilik from 'accessibility-react-widget'
 
 export function Providers({
   children
@@ -12,7 +13,10 @@ export function Providers({
 
   return (
     <QueryClientProvider client={queryClient}>
-      <NextUIProvider>{children}</NextUIProvider>
+      <NextUIProvider>
+        <Accessibilik />
+        {children}
+      </NextUIProvider>
     </QueryClientProvider>
   )
 }

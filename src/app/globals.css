@@ -18,6 +18,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+#accessibilik a {
+  bottom: 50%;
+}
+
 @layer base {
   h1 {
     @apply text-3xl font-bold mb-4;
