@@ -1,8 +1,8 @@
 import { Autocomplete } from '@/components/atoms/autocomplete'
 import { CountryListDataType } from '@/types/country-list'
 import { OptionDataType } from '@/types/opction'
-import { Image } from '@nextui-org/react'
 import country from 'country-list-js'
+import Image from 'next/image'
 import React, { FC, Key } from 'react'
 
 interface CountieListProps {
@@ -16,7 +16,8 @@ export const CountryList: FC<CountieListProps> = ({ onChange }) => {
 
   const iconItem = (option: OptionDataType) => (
     <Image
-      radius='none'
+      width={20}
+      height={10}
       alt={option.label}
       src={`https://flagcdn.com/w20/${option.value.toLowerCase()}.png`}
     />

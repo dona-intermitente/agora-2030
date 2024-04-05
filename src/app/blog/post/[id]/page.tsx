@@ -1,8 +1,9 @@
 import { categoriesFormat } from '@/commons/format'
-import { Card, CardFooter, Image } from '@nextui-org/react'
+import { Card, CardFooter } from '@nextui-org/react'
 import { Divider } from '@/components/atoms/divider'
 import { PostsRecomended } from '@/components/organisms/post-recommended'
 import { getById } from '@/service/post'
+import Image from 'next/image'
 
 export default async function Post({
   params: { id }
@@ -27,7 +28,13 @@ export default async function Post({
         <blockquote className='border-l-8 ps-4'>
           {post.first_name} {post.last_name}
         </blockquote>
-        <Image alt={post.title} src={post.image} />
+        <Image
+          alt={post.title}
+          className='rounded-xl'
+          src={post.image}
+          width={405}
+          height={264}
+        />
         {post.content}
       </article>
       <div className='content my-20'>

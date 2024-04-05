@@ -1,5 +1,6 @@
 import { PostsPanel } from '@/components/organisms/post-panel'
-import { Card, CardBody, Image } from '@nextui-org/react'
+import { Card, CardBody } from '@nextui-org/react'
+import Image from 'next/image'
 
 export default function Blog() {
   return (
@@ -11,13 +12,14 @@ export default function Blog() {
             <h1>Learn About Our Latest Articles and News</h1>
           </CardBody>
         </Card>
-        <div className='relative'>
+        <div>
           <Image
-            src='/assets/images/blog/header-blog.png'
             alt='blog'
-            radius='lg'
-            width='100%'
-            height='100%'
+            className='w-full rounded-xl'
+            height={447}
+            priority
+            src='/assets/images/blog/header-blog.png'
+            width={593}
           />
         </div>
       </header>

@@ -41,8 +41,9 @@ export const Card: FC<CardProps> = ({
         <CardBody className='flex-none p-0'>
           <Image
             alt={title}
-            className='object-cover z-0'
+            className='object-cover z-0 aspect-auto'
             isZoomed
+            loading='lazy'
             radius='lg'
             src={img}
           />

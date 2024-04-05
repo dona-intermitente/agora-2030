@@ -51,6 +51,7 @@ export const Slide: FC<SlideProps> = ({ items }) => {
           alt={item.alt}
           src={item.img}
           className='p-10'
+          loading='lazy'
         />
       ))}
     </Slider>
