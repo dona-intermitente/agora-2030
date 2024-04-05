@@ -31,12 +31,16 @@
   "dependencies": {
     "@nextui-org/react": "2.2.10",
     "@tanstack/react-query": "5.28.9",
+    "@types/nodemailer": "^6.4.14",
     "clsx": "2.1.0",
+    "country-list-js": "3.1.8",
     "framer-motion": "11.0.23",
     "next": "14.1.4",
+    "nodemailer": "^6.9.13",
     "react": "18",
     "react-countup": "6.5.3",
     "react-dom": "18",
+    "react-hook-form": "^7.51.2",
     "react-slick": "0.30.2",
     "slick-carousel": "1.8.1",
     "tailwind-merge": "2.2.2"

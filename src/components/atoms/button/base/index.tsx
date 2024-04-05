@@ -7,6 +7,9 @@ export const Button = extendVariants(ButtonUI, {
     },
     size: {
       sm: 'text-sm h-7'
+    },
+    isDisabled: {
+      true: 'opacity-50 cursor-not-allowed'
     }
   },
   defaultVariants: {
